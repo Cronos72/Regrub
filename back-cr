@@ -1,0 +1,114 @@
+
+<!Doctype html5>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script>
+        
+        </script>
+
+    </head>
+    <body>
+
+        <div id="closing-report">
+            
+            <form class="uk-form-horizontal">
+                    <legend class="uk-legend"> Closing Report {{date}}  </legend> 
+            
+            <div class="uk-margin">
+                <label class="uk-form-label" for="uk-form-horizontal-beef"> Beef </label>
+                <div class="uk-form-controls">
+                    <input id="uk-form-horizontal-beef" v-model="thawed.beef" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                    <input v-model="frozen.beef" placeholder="beef" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-bison"> bison </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-bison" v-model="thawed.bison" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.bison" placeholder="bison" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-turkey"> Turkey </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-turkey" v-model="thawed.turkey" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.turkey" placeholder="turkey" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-veggie"> Veggie </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-veggie" v-model="thawed.veggie" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.veggie" placeholder="veggie" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-beyondmeat"> Beyondmeat </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-beyondmeat" v-model="thawed.beyondmeat" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.beyondmeat" placeholder="beyondmeat" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-fries"> Fries </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-fries" v-model="thawed.fries" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.fries" placeholder="fries" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="uk-form-horizontal-buns"> Buns </label>
+                    <div class="uk-form-controls">
+                        <input id="uk-form-horizontal-buns" v-model="thawed.buns" placeholder="0" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall"> / 
+                        <input v-model="frozen.buns" placeholder="buns" class="uk-input uk-form-small uk-form-widt uk-form-width-xsmall">
+                    </div>
+            </div>
+        
+            </form>   
+
+            
+            
+            
+           <!-- This is a button toggling the modal -->
+<button class="uk-button uk-button-default" uk-toggle="target: #my-id" type="button"> Generate Report</button>
+
+<!-- This is the modal -->
+<div id="my-id" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        
+        <button class="uk-modal-close uk-modal-close-default"  uk-close type="button"></button>
+    
+                <form>
+                    <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text">Output: </label>
+<textarea id="output" class="uk-textarea" rows="5" placeholder="">
+Closing Report- {{ date }}
+Beef: {{thawed.beef}} / {{frozen.beef}}
+Bison:  {{thawed.bison}} / {{frozen.bison}}
+Turkey:  {{thawed.turkey}} / {{frozen.turkey}}
+Veggie:  {{thawed.veggie}} / {{frozen.veggie}}
+Beyondmeat:  {{thawed.beyondmeat}} / {{frozen.beyondmeat}}
+Fries:  {{thawed.fries}} / {{frozen.fries}}
+Buns:  {{thawed.buns}} / {{frozen.buns}}</textarea>
+                        </div>
+                        <button class="uk-button uk-button-default" type="button" onclick="copyReport();" > Copy Report</button>
+               </form>
+    
+    </div>
+</div>
+        </div>
+       
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="js\main.js"></script>
+    </body>
+</html>
